@@ -29,6 +29,11 @@ check_pocketbase() {
 authenticate_admin() {
     echo "🔐 Authenticating as admin..."
 
+    # First try to create the admin user (for first-time setup)
+    CREATE_ADMIN_RESPONSE=$(curl -s -X POST "$POCKETBASE_URL/api/admins" \
+        -H "Content-Type: application/json" \
+        -d "{\"email\": \"$ADMIN_EMAIL\", \"password\": \"$ADMIN_PASSWORD\", \"passwordConfirm\": \"$ADMIN_PASSWORD\"}")
+
     # Try to authenticate
     AUTH_RESPONSE=$(curl -s -X POST "$POCKETBASE_URL/api/admins/auth-with-password" \
         -H "Content-Type: application/json" \
@@ -38,7 +43,11 @@ authenticate_admin() {
 
     if [ -z "$TOKEN" ]; then
         echo "❌ Failed to authenticate as admin"
-        echo "💡 Make sure PocketBase is running and admin credentials are correct"
+        echo "💡 First-time setup: Please create an admin user manually in PocketBase admin UI"
+        echo "   1. Visit: $POCKETBASE_URL/_/"
+        echo "   2. Create an admin account"
+        echo "   3. Update POCKETBASE_ADMIN_EMAIL and POCKETBASE_ADMIN_PASSWORD in .env"
+        echo "   4. Run this script again"
         return 1
     fi
 

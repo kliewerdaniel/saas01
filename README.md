@@ -44,11 +44,11 @@ npm install
 ### 2. Set Up PocketBase
 
 ```bash
-# Download and set up PocketBase
+# Download PocketBase binary
 ./scripts/init-pb.sh
 
-# Bootstrap collections and demo data
-./scripts/bootstrap-collections.sh
+# First-time setup (creates admin user and collections)
+./scripts/setup-first-time.sh
 ```
 
 ### 3. Configure Environment

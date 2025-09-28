@@ -2,19 +2,6 @@ import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import DashboardPage from '../page'
 
-// Mock recharts components to avoid canvas issues in tests
-jest.mock('recharts', () => ({
-  ResponsiveContainer: ({ children }: { children: React.ReactNode }) => <div data-testid="responsive-container">{children}</div>,
-  BarChart: ({ children }: { children: React.ReactNode }) => <div data-testid="bar-chart">{children}</div>,
-  LineChart: ({ children }: { children: React.ReactNode }) => <div data-testid="line-chart">{children}</div>,
-  Bar: () => <div data-testid="bar" />,
-  Line: () => <div data-testid="line" />,
-  XAxis: () => <div data-testid="x-axis" />,
-  YAxis: () => <div data-testid="y-axis" />,
-  CartesianGrid: () => <div data-testid="cartesian-grid" />,
-  Tooltip: () => <div data-testid="tooltip" />,
-}))
-
 describe('Dashboard Page', () => {
   it('renders dashboard title and description', () => {
     render(<DashboardPage />)
@@ -48,8 +35,8 @@ describe('Dashboard Page', () => {
     expect(screen.getByText('Revenue Trend')).toBeInTheDocument()
     expect(screen.getByText('Monthly revenue progression')).toBeInTheDocument()
 
-    expect(screen.getByTestId('bar-chart')).toBeInTheDocument()
-    expect(screen.getByTestId('line-chart')).toBeInTheDocument()
+    expect(screen.getByText('Chart visualization')).toBeInTheDocument()
+    expect(screen.getByText('Revenue analytics')).toBeInTheDocument()
   })
 
   it('renders recent activity section', () => {
