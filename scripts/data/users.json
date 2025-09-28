@@ -1,0 +1,26 @@
+[
+  {
+    "email": "demo@example.com",
+    "name": "Demo User",
+    "verified": true,
+    "subscription_tier": "pro"
+  },
+  {
+    "email": "john@example.com",
+    "name": "John Smith",
+    "verified": true,
+    "subscription_tier": "free"
+  },
+  {
+    "email": "sarah@example.com",
+    "name": "Sarah Johnson",
+    "verified": true,
+    "subscription_tier": "enterprise"
+  },
+  {
+    "email": "mike@example.com",
+    "name": "Mike Davis",
+    "verified": false,
+    "subscription_tier": "free"
+  }
+]
