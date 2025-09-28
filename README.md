@@ -7,6 +7,13 @@ A complete, production-ready boilerplate for building local-first SaaS applicati
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.3.3-blue)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.0-38B2AC)
 
+![alt text](ssa.png)
+
+![alt text](ssb.png)
+
+![alt text](ssc.png)
+
+
 ## 🚀 Features
 
 ### Core Technologies
