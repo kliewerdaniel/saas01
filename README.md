@@ -43,8 +43,8 @@ A complete, production-ready boilerplate for building local-first SaaS applicati
 ### 1. Clone and Install
 
 ```bash
-git clone <your-repo-url>
-cd local-first-saas-boilerplate
+git clone https://github.com/kliewerdaniel/saas01.git
+cd saas01
 npm install
 ```
 
